@@ -9,6 +9,7 @@ import subscriptionRouter from './routes/subscription.routes.js';
 import connectToDatabase from './database/mongodb.js';
 import errorMiddleware from './middlewares/error.middleware.js';
 import cookieParser from 'cookie-parser';
+import arcjetMiddleware from './middlewares/arcjet.middleware.js';
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 //reads cookies from incoming requests so app can store user data
 app.use(cookieParser());
+app.use(arcjetMiddleware);
 
 // put routes to use
 // gets to sign up by heading to api/v1/auth/signup (prepends to the path of the routes in each router)
