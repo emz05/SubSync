@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
 const userSchema = new mongoose.Schema({
     name: {
@@ -19,6 +19,13 @@ const userSchema = new mongoose.Schema({
     password:{
         type: String,
         required: [true, 'User Password is required'], 
-        minLength: 0;
+        minLength: 6,
     }
-})
+    // adds createdAt and updatedAt fields in doc
+    // ie. tracks when user registered or last updated profile
+}, {timestamps: true});
+
+const User = mongoose.model('User', userSchema);
+
+export default User;
+
