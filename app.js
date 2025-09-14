@@ -7,13 +7,26 @@ import userRouter from './routes/user.routes.js';
 import authRouter from './routes/auth.routes.js';
 import subscriptionRouter from './routes/subscription.routes.js';
 import connectToDatabase from './database/mongodb.js';
+import errorMiddleware from './middlewares/error.middleware.js';
+import cookieParser from 'cookie-parser';
 
 const app = express();
+
+//built in middlewares
+//handles json data sent in requests (api calls)
+app.use(express.json());
+//process form data sent by html forms in a simple format
+app.use(express.urlencoded({extended: false}));
+//reads cookies from incoming requests so app can store user data
+app.use(cookieParser());
+
 // put routes to use
 // gets to sign up by heading to api/v1/auth/signup (prepends to the path of the routes in each router)
 app.use('/api/v1/auth', authRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/subscriptions', subscriptionRouter);
+
+app.use(errorMiddleware);
 
 //create first route
 // refer to app instance, call method of http call to be made (post, get, delete)

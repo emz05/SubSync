@@ -5,4 +5,9 @@ import {config} from 'dotenv';
 // if node env DNE, default to development: allows switching between production and development envs w/o overriding the other
 config({path: `.env.${process.env.NODE_ENV || 'development'}.local`});
 
-export const {PORT, NODE_ENV, DB_URI} = process.env;
+export const {
+    PORT, NODE_ENV, 
+    DB_URI,
+    JWT_SECRET, JWT_EXPIRES_IN,
+} = process.env;
+
