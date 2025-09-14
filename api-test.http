@@ -31,16 +31,30 @@
 # Content-Type: application/json
 
 
-GET http://localhost:5500/api/v1/subscriptions/user/68c6378705fa0a40ce8ed37c
+# GET http://localhost:5500/api/v1/subscriptions/user/68c6378705fa0a40ce8ed37c
+# Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM2Mzc4NzA1ZmEwYTQwY2U4ZWQzN2MiLCJpYXQiOjE3NTc4MjQ3MjAsImV4cCI6MTc1NzkxMTEyMH0.efnP-UO5_HSVmZV2bKjRRhXJMReD70KHJeWv0BFmMq4
+# Content-Type: application/json
+
+# {
+#     "name": "Netflix Premium",
+#     "price": 15.99,
+#     "currency": "USD",
+#     "frequency": "monthly",
+#     "category": "entertainment",
+#     "startDate": "2024-02-01T00:00:00.000Z",
+#     "paymentMethod": "Credit Card"
+# }
+
+POST http://localhost:5500/api/v1/subscriptions/
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OGM2Mzc4NzA1ZmEwYTQwY2U4ZWQzN2MiLCJpYXQiOjE3NTc4MjQ3MjAsImV4cCI6MTc1NzkxMTEyMH0.efnP-UO5_HSVmZV2bKjRRhXJMReD70KHJeWv0BFmMq4
 Content-Type: application/json
 
 {
-    "name": "Netflix Premium",
-    "price": 15.99,
+    "name": "JS Membership",
+    "price": 135.99,
     "currency": "USD",
     "frequency": "monthly",
     "category": "entertainment",
-    "startDate": "2024-02-01T00:00:00.000Z",
+    "startDate": "2025-01-15T00:00:00.000Z",
     "paymentMethod": "Credit Card"
 }
