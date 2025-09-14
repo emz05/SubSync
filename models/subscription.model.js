@@ -20,7 +20,7 @@ const subscriptionSchema = new mongoose.Schema({
     }, 
     frequency:{
         type: String,
-        enum: ['daily', 'weekly', 'yearly'],
+        enum: ['daily', 'weekly', 'monthly', 'yearly'],
     },
     category:{
         type: String,
@@ -86,6 +86,6 @@ subscriptionSchema.pre('save', function(next){
     next();
 });
 
-const Subcription = mongoose.model('Subscription', subscriptionSchema);
+const Subscription = mongoose.model('Subscription', subscriptionSchema);
 
 export default Subscription;
